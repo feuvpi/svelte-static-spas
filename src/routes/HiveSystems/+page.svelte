@@ -20,6 +20,14 @@
       { href: '#metodologia', text: 'Metodologia' },
       { href: '#contato', text: 'Contato' }
     ];
+
+    let currentLang = 'pt-BR'; // ou 'en-US'
+  
+  const toggleLanguage = (lang) => {
+    currentLang = lang;
+    // Aqui você implementará a lógica de mudança de idioma
+  };
+
 </script>
 
 <!-- Enhanced Navbar -->
@@ -31,7 +39,9 @@
           Eixxo
         </a>
       </div>
-      <div class="hidden md:block">
+      
+      <div class="hidden md:flex items-center">
+        <!-- Navigation Items -->
         <div class="ml-10 flex items-baseline space-x-8">
           {#each navItems as item}
             <a href={item.href} 
@@ -40,9 +50,38 @@
             </a>
           {/each}
         </div>
+
+        <!-- Language Selector -->
+        <div class="flex items-center space-x-2 ml-8 pl-8 border-l border-white/10">
+          <button class="p-1.5 bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] rounded-sm transition-all duration-300 group">
+            <span class="w-5 h-4 flex items-center justify-center opacity-60 group-hover:opacity-90 transition-opacity">
+              🇧🇷
+            </span>
+          </button>
+          <button class="p-1.5 bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] rounded-sm transition-all duration-300 group">
+            <span class="w-5 h-4 flex items-center justify-center opacity-60 group-hover:opacity-90 transition-opacity">
+              🇺🇸
+            </span>
+          </button>
+        </div>
       </div>
+
       <!-- Mobile menu button -->
-      <div class="md:hidden">
+      <div class="md:hidden flex items-center">
+        <!-- Language Selector for Mobile -->
+        <div class="flex space-x-1 mr-4">
+          <button class="p-1 bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] rounded-sm transition-all duration-300 group">
+            <span class="w-4 h-3 flex items-center justify-center opacity-60 group-hover:opacity-90 transition-opacity text-xs">
+              🇧🇷
+            </span>
+          </button>
+          <button class="p-1 bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] rounded-sm transition-all duration-300 group">
+            <span class="w-4 h-3 flex items-center justify-center opacity-60 group-hover:opacity-90 transition-opacity text-xs">
+              🇺🇸
+            </span>
+          </button>
+        </div>
+
         <button class="p-2 text-white/70 hover:text-white">
           <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
@@ -100,88 +139,101 @@
   </header>
 
   <!-- Enhanced Services Section -->
-  <section class="py-20 sm:py-24 px-4 sm:px-6 relative" id="servicos">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16 sm:mb-20">
-        <h2 class="text-2xl sm:text-3xl font-light tracking-wide mb-6 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
-          Serviços
-        </h2>
+<section class="py-20 sm:py-24 px-4 sm:px-6 relative" id="servicos">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 sm:mb-20">
+      <h2 class="text-2xl sm:text-3xl font-light tracking-wide mb-6 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+        Serviços
+      </h2>
+    </div>
+ 
+    <!-- Service Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
+      <!-- Development Card -->
+      <div class="group relative h-full">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-sm blur-xl transition-all group-hover:blur-2xl opacity-0 group-hover:opacity-100"></div>
+        <div class="flex flex-col h-full p-6 sm:p-8 bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.05] transition-all duration-500 relative">
+          <h3 class="text-lg font-light tracking-wide mb-6 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+            Desenvolvimento
+          </h3>
+          <p class="text-white/60 text-sm leading-relaxed mb-8 flex-grow">
+            Soluções multiplataforma elegantes e eficientes, com foco em experiência do usuário e performance. Transformamos ideias em software de alta qualidade, utilizando as melhores práticas e tecnologias modernas.
+          </p>
+          <ul class="space-y-4 text-sm text-white/70">
+            <li class="flex items-center gap-3">
+              <span class="w-px h-3 bg-gradient-to-r from-blue-400/20 to-cyan-400/20"></span>
+              Mobile & Web Apps
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-px h-3 bg-gradient-to-r from-blue-400/20 to-cyan-400/20"></span>
+              APIs & Microsserviços
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-px h-3 bg-gradient-to-r from-blue-400/20 to-cyan-400/20"></span>
+              Sistemas Desktop
+            </li>
+          </ul>
+        </div>
       </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
-        <!-- Enhanced service cards -->
-        <div class="group relative">
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-sm blur-xl transition-all group-hover:blur-2xl opacity-0 group-hover:opacity-100"></div>
-          <div class="p-6 sm:p-8 bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.05] transition-all duration-500 relative">
-            <h3 class="text-lg font-light tracking-wide mb-6 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
-              Desenvolvimento
-            </h3>
-            <p class="text-white/60 text-sm leading-relaxed mb-8">
-              Soluções multiplataforma elegantes e eficientes, com foco em experiência do usuário e performance.
-            </p>
-            <ul class="space-y-4 text-sm text-white/70">
-              <li class="flex items-center gap-3">
-                <span class="w-px h-3 bg-gradient-to-r from-blue-400/20 to-cyan-400/20"></span>
-                Mobile & Web
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="w-px h-3 bg-gradient-to-r from-blue-400/20 to-cyan-400/20"></span>
-                APIs & Microsserviços
-              </li>
-            </ul>
-          </div>
+ 
+      <!-- Hyperautomation Card -->
+      <div class="group relative h-full">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-sm blur-xl transition-all group-hover:blur-2xl opacity-0 group-hover:opacity-100"></div>
+        <div class="flex flex-col h-full p-6 sm:p-8 bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.05] transition-all duration-500 relative">
+          <h3 class="text-lg font-light tracking-wide mb-6 bg-gradient-to-r from-purple-400/90 to-blue-400/90 text-transparent bg-clip-text">
+            Hiperautomação
+          </h3>
+          <p class="text-white/60 text-sm leading-relaxed mb-8 flex-grow">
+            Transforme processos complexos em fluxos inteligentes e automatizados. Combinamos RPA, IA e análise avançada para elevar sua eficiência operacional ao próximo nível, reduzindo custos e erros humanos.
+          </p>
+          <ul class="space-y-4 text-sm text-white/70">
+            <li class="flex items-center gap-3">
+              <span class="w-px h-3 bg-gradient-to-r from-purple-400/20 to-blue-400/20"></span>
+              Automação Inteligente
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-px h-3 bg-gradient-to-r from-purple-400/20 to-blue-400/20"></span>
+              Otimização de Processos
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-px h-3 bg-gradient-to-r from-purple-400/20 to-blue-400/20"></span>
+              Análise e Monitoria
+            </li>
+          </ul>
         </div>
-
-        <!-- AI Service Card -->
-        <div class="group relative">
-          <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-sm blur-xl transition-all group-hover:blur-2xl opacity-0 group-hover:opacity-100"></div>
-          <div class="p-6 sm:p-8 bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.05] transition-all duration-500 relative">
-            <h3 class="text-lg font-light tracking-wide mb-6 bg-gradient-to-r from-purple-400/90 to-blue-400/90 text-transparent bg-clip-text">
-              Inteligência Artificial
-            </h3>
-            <p class="text-white/60 text-sm leading-relaxed mb-8">
-              Potencializamos seu negócio com soluções inteligentes e automatizadas.
-            </p>
-            <ul class="space-y-4 text-sm text-white/70">
-              <li class="flex items-center gap-3">
-                <span class="w-px h-3 bg-gradient-to-r from-purple-400/20 to-blue-400/20"></span>
-                Automação Inteligente
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="w-px h-3 bg-gradient-to-r from-purple-400/20 to-blue-400/20"></span>
-                Machine Learning
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Cloud Service Card -->
-        <div class="group relative">
-          <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-green-500/5 rounded-sm blur-xl transition-all group-hover:blur-2xl opacity-0 group-hover:opacity-100"></div>
-          <div class="p-6 sm:p-8 bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.05] transition-all duration-500 relative">
-            <h3 class="text-lg font-light tracking-wide mb-6 bg-gradient-to-r from-cyan-400/90 to-green-400/90 text-transparent bg-clip-text">
-              Cloud & DevOps
-            </h3>
-            <p class="text-white/60 text-sm leading-relaxed mb-8">
-              Infraestrutura escalável e processos automatizados para máxima eficiência.
-            </p>
-            <ul class="space-y-4 text-sm text-white/70">
-              <li class="flex items-center gap-3">
-                <span class="w-px h-3 bg-gradient-to-r from-cyan-400/20 to-green-400/20"></span>
-                Cloud Native
-              </li>
-              <li class="flex items-center gap-3">
-                <span class="w-px h-3 bg-gradient-to-r from-cyan-400/20 to-green-400/20"></span>
-                DevOps & CI/CD
-              </li>
-            </ul>
-          </div>
+      </div>
+ 
+      <!-- Cloud & DevOps Card -->
+      <div class="group relative h-full">
+        <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-green-500/5 rounded-sm blur-xl transition-all group-hover:blur-2xl opacity-0 group-hover:opacity-100"></div>
+        <div class="flex flex-col h-full p-6 sm:p-8 bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.05] transition-all duration-500 relative">
+          <h3 class="text-lg font-light tracking-wide mb-6 bg-gradient-to-r from-cyan-400/90 to-green-400/90 text-transparent bg-clip-text">
+            Cloud Computing & DevOps
+          </h3>
+          <p class="text-white/60 text-sm leading-relaxed mb-8 flex-grow">
+            Arquiteturas cloud-native escaláveis e seguras. Automatize seu pipeline de desenvolvimento e implantação com as melhores práticas de DevOps e infraestrutura como código (IaC).
+          </p>
+          <ul class="space-y-4 text-sm text-white/70">
+            <li class="flex items-center gap-3">
+              <span class="w-px h-3 bg-gradient-to-r from-cyan-400/20 to-green-400/20"></span>
+              Cloud Architecture & IaC
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-px h-3 bg-gradient-to-r from-cyan-400/20 to-green-400/20"></span>
+              CI/CD & DevSecOps
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-px h-3 bg-gradient-to-r from-cyan-400/20 to-green-400/20"></span>
+              Monitoramento & SRE
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+ </section>
 
-  <!-- Enhanced Methodology Section -->
+ <!-- Enhanced Methodology Section -->
   <section class="py-20 sm:py-24 px-4 sm:px-6 bg-gradient-to-b from-transparent via-white/[0.01] to-transparent" id="metodologia">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-2xl font-mono sm:text-3xl font-light tracking-wide text-center mb-16 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
@@ -253,12 +305,219 @@
     </div>
   </section>
 
-  <!-- Enhanced Tech Stack -->
-  <section class="py-20 sm:py-24 px-4 sm:px-6 bg-gradient-to-b from-transparent via-white/[0.01] to-transparent" id="tecnologias">
+  <section class="py-24 px-4 sm:px-6 bg-gradient-to-b from-transparent via-white/[0.01] to-transparent" id="como-trabalhamos">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl font-light tracking-wide text-center mb-16 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
-        Stack Tecnológico
+      <h2 class="text-2xl sm:text-3xl font-light tracking-wide text-center mb-24 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+        Como Trabalhamos
       </h2>
+  
+      <div class="space-y-32">
+        <!-- Development Section -->
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-sm blur-3xl opacity-20"></div>
+          <div class="grid md:grid-cols-2 gap-12 items-center relative">
+            <div class="space-y-8 order-2 md:order-1">
+              <h3 class="text-xl font-light bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+                Desenvolvimento de Software
+              </h3>
+              <div class="space-y-6 bg-white/[0.02] border border-white/[0.05] p-6 rounded-sm backdrop-blur-sm">
+                <div class="group">
+                  <div class="flex items-center gap-4 mb-2">
+                    <span class="w-8 h-8 flex items-center justify-center rounded-sm bg-blue-500/10 text-blue-400/90 text-sm">01</span>
+                    <h4 class="text-white/90 font-light">Análise & Descoberta</h4>
+                  </div>
+                  <p class="text-white/60 text-sm leading-relaxed pl-12">
+                    Começamos entendendo profundamente seu negócio e objetivos. Realizamos workshops 
+                    de descoberta, mapeamos requisitos técnicos e funcionais, e definimos métricas 
+                    de sucesso claras para o projeto.
+                  </p>
+                </div>
+  
+                <div class="group">
+                  <div class="flex items-center gap-4 mb-2">
+                    <span class="w-8 h-8 flex items-center justify-center rounded-sm bg-blue-500/10 text-blue-400/90 text-sm">02</span>
+                    <h4 class="text-white/90 font-light">Planejamento & Design</h4>
+                  </div>
+                  <p class="text-white/60 text-sm leading-relaxed pl-12">
+                    Desenvolvemos a arquitetura técnica, definimos stack tecnológico e criamos 
+                    protótipos interativos. Estabelecemos sprints, milestones e um roadmap 
+                    claro de desenvolvimento.
+                  </p>
+                </div>
+  
+                <div class="group">
+                  <div class="flex items-center gap-4 mb-2">
+                    <span class="w-8 h-8 flex items-center justify-center rounded-sm bg-blue-500/10 text-blue-400/90 text-sm">03</span>
+                    <h4 class="text-white/90 font-light">Desenvolvimento Ágil</h4>
+                  </div>
+                  <p class="text-white/60 text-sm leading-relaxed pl-12">
+                    Trabalhamos em sprints quinzenais com entregas incrementais. Cada ciclo inclui 
+                    desenvolvimento, testes automatizados, code review e feedback contínuo do cliente.
+                  </p>
+                </div>
+  
+                <div class="group">
+                  <div class="flex items-center gap-4 mb-2">
+                    <span class="w-8 h-8 flex items-center justify-center rounded-sm bg-blue-500/10 text-blue-400/90 text-sm">04</span>
+                    <h4 class="text-white/90 font-light">Entrega & Evolução</h4>
+                  </div>
+                  <p class="text-white/60 text-sm leading-relaxed pl-12">
+                    Realizamos deploy em ambiente de produção com zero downtime, oferecemos 
+                    suporte pós-lançamento e estabelecemos ciclos de evolução contínua do sistema.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="relative order-1 md:order-2 aspect-square">
+              <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-transparent rounded-sm"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?auto=format&fit=crop&q=80"
+                alt="Desenvolvimento ágil em ação" 
+                class="w-full h-full object-cover rounded-sm mix-blend-luminosity opacity-80"
+              />
+            </div>
+          </div>
+        </div>
+  
+        <!-- Hyperautomation Section -->
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-sm blur-3xl opacity-20"></div>
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative aspect-square">
+              <div class="absolute inset-0 bg-gradient-to-tl from-purple-500/10 to-transparent rounded-sm"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80"
+                alt="Automação de processos" 
+                class="w-full h-full object-cover rounded-sm mix-blend-luminosity opacity-80"
+              />
+            </div>
+            <div class="space-y-8">
+              <h3 class="text-xl font-light bg-gradient-to-r from-purple-400/90 to-blue-400/90 text-transparent bg-clip-text">
+                Hiperautomação de Processos
+              </h3>
+              <div class="space-y-6 bg-white/[0.02] border border-white/[0.05] p-6 rounded-sm backdrop-blur-sm">
+                <div class="group">
+                  <div class="flex items-center gap-4 mb-2">
+                    <span class="w-8 h-8 flex items-center justify-center rounded-sm bg-purple-500/10 text-purple-400/90 text-sm">01</span>
+                    <h4 class="text-white/90 font-light">Análise & Mapeamento</h4>
+                  </div>
+                  <p class="text-white/60 text-sm leading-relaxed pl-12">
+                    Mapeamento detalhado dos processos atuais, identificação de gargalos e 
+                    oportunidades. Definimos KPIs claros e estimativa de ROI para cada processo.
+                  </p>
+                </div>
+  
+                <div class="group">
+                  <div class="flex items-center gap-4 mb-2">
+                    <span class="w-8 h-8 flex items-center justify-center rounded-sm bg-purple-500/10 text-purple-400/90 text-sm">02</span>
+                    <h4 class="text-white/90 font-light">Desenho da Solução</h4>
+                  </div>
+                  <p class="text-white/60 text-sm leading-relaxed pl-12">
+                    Desenvolvemos arquitetura de automação combinando RPA, IA e ferramentas analíticas. 
+                    Definimos integrações necessárias e plano de implementação gradual.
+                  </p>
+                </div>
+  
+                <div class="group">
+                  <div class="flex items-center gap-4 mb-2">
+                    <span class="w-8 h-8 flex items-center justify-center rounded-sm bg-purple-500/10 text-purple-400/90 text-sm">03</span>
+                    <h4 class="text-white/90 font-light">Implementação & Testes</h4>
+                  </div>
+                  <p class="text-white/60 text-sm leading-relaxed pl-12">
+                    Desenvolvimento dos componentes de automação, testes extensivos em ambiente 
+                    controlado e validação com usuários-chave do processo.
+                  </p>
+                </div>
+  
+                <div class="group">
+                  <div class="flex items-center gap-4 mb-2">
+                    <span class="w-8 h-8 flex items-center justify-center rounded-sm bg-purple-500/10 text-purple-400/90 text-sm">04</span>
+                    <h4 class="text-white/90 font-light">Monitoramento & Otimização</h4>
+                  </div>
+                  <p class="text-white/60 text-sm leading-relaxed pl-12">
+                    Implementação de dashboards de monitoramento, análise contínua de performance 
+                    e ciclos regulares de otimização dos processos automatizados.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Cloud & DevOps Section -->
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-green-500/5 rounded-sm blur-3xl opacity-20"></div>
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 order-2 md:order-1">
+              <h3 class="text-xl font-light bg-gradient-to-r from-cyan-400/90 to-green-400/90 text-transparent bg-clip-text">
+                Cloud Computing & DevOps
+              </h3>
+              <div class="space-y-6 bg-white/[0.02] border border-white/[0.05] p-6 rounded-sm backdrop-blur-sm">
+                <div class="group">
+                  <div class="flex items-center gap-4 mb-2">
+                    <span class="w-8 h-8 flex items-center justify-center rounded-sm bg-cyan-500/10 text-cyan-400/90 text-sm">01</span>
+                    <h4 class="text-white/90 font-light">Assessment & Estratégia</h4>
+                  </div>
+                  <p class="text-white/60 text-sm leading-relaxed pl-12">
+                    Avaliação da infraestrutura atual, definição de objetivos de migração/implementação 
+                    e desenvolvimento de roadmap cloud-native personalizado.
+                  </p>
+                </div>
+  
+                <div class="group">
+                  <div class="flex items-center gap-4 mb-2">
+                    <span class="w-8 h-8 flex items-center justify-center rounded-sm bg-cyan-500/10 text-cyan-400/90 text-sm">02</span>
+                    <h4 class="text-white/90 font-light">Arquitetura & Segurança</h4>
+                  </div>
+                  <p class="text-white/60 text-sm leading-relaxed pl-12">
+                    Design da arquitetura cloud, definição de práticas de IaC e implementação 
+                    de políticas de segurança e compliance desde o início.
+                  </p>
+                </div>
+  
+                <div class="group">
+                  <div class="flex items-center gap-4 mb-2">
+                    <span class="w-8 h-8 flex items-center justify-center rounded-sm bg-cyan-500/10 text-cyan-400/90 text-sm">03</span>
+                    <h4 class="text-white/90 font-light">Implementação & Automação</h4>
+                  </div>
+                  <p class="text-white/60 text-sm leading-relaxed pl-12">
+                    Configuração de ambientes, implementação de pipelines CI/CD e automação 
+                    de infraestrutura. Integração de práticas DevSecOps em todo o processo.
+                  </p>
+                </div>
+  
+                <div class="group">
+                  <div class="flex items-center gap-4 mb-2">
+                    <span class="w-8 h-8 flex items-center justify-center rounded-sm bg-cyan-500/10 text-cyan-400/90 text-sm">04</span>
+                    <h4 class="text-white/90 font-light">SRE & Observabilidade</h4>
+                  </div>
+                  <p class="text-white/60 text-sm leading-relaxed pl-12">
+                    Implementação de práticas SRE, monitoramento abrangente, gestão de logs 
+                    centralizada e sistemas de alerta inteligentes.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="relative order-1 md:order-2 aspect-square">
+              <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-transparent rounded-sm"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80"
+                alt="Infraestrutura cloud moderna" 
+                class="w-full h-full object-cover rounded-sm mix-blend-luminosity opacity-80"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Tech Stack -->
+  <section class="py-20 sm:py-24 border-2 px-4 sm:px-6 bg-gradient-to-b from-transparent via-white/[0.01] to-transparent" id="tecnologias">
+    <div class="max-w-6xl mx-auto">
+      <!-- <h2 class="text-2xl sm:text-3xl font-light tracking-wide text-center mb-16 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+        Stack Tecnológico
+      </h2> -->
       <div class="flex flex-wrap justify-center items-center gap-x-32 gap-y-8">
         <!-- Place SVGs here -->
          <!-- C# Logo -->
@@ -284,41 +543,95 @@
   </section>
 
   <!-- Enhanced Contact Section -->
-  <section class="py-20 sm:py-24 px-4 sm:px-6" id="contato">
-    <div class="max-w-3xl mx-auto">
+  <section class="min-h-screen flex items-center py-20 sm:py-24 px-4 sm:px-6" id="contato">
+    <div class="max-w-6xl mx-auto w-full">
       <h2 class="text-2xl sm:text-3xl font-light tracking-wide text-center mb-16 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
-        Contato
+        Vamos Iniciar Seu Projeto
       </h2>
-      <div class="relative">
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-sm blur-xl"></div>
-        <form class="space-y-8 relative bg-white/[0.02] p-6 sm:p-8 border border-white/[0.05] backdrop-blur-sm">
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="relative group">
-              <input type="text" 
-                     placeholder="Nome" 
-                     class="w-full px-4 py-3 bg-white/[0.02] border border-white/[0.05] focus:border-blue-500/20 outline-none transition-all duration-300 rounded-sm placeholder-white/30">
-              <div class="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 pointer-events-none"></div>
+      
+      <div class="grid md:grid-cols-[1fr,1.5fr] gap-8 items-start">
+        <!-- Instructional Side -->
+        <div class="bg-white/[0.02] border border-white/[0.05] p-8 rounded-sm">
+          <h3 class="text-lg font-light tracking-wide mb-6 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+            Como Podemos Ajudar
+          </h3>
+          <div class="space-y-6">
+            <div class="space-y-3">
+              <h4 class="text-white/80 text-sm font-medium">Desenvolvimento</h4>
+              <p class="text-white/60 text-sm">
+                Descreva sua necessidade de software, seja mobile, web ou desktop. 
+                Quanto mais detalhes sobre funcionalidades e objetivos, melhor.
+              </p>
             </div>
-            <div class="relative group">
-              <input type="email" 
-                     placeholder="Email" 
-                     class="w-full px-4 py-3 bg-white/[0.02] border border-white/[0.05] focus:border-blue-500/20 outline-none transition-all duration-300 rounded-sm placeholder-white/30">
-              <div class="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 pointer-events-none"></div>
+            
+            <div class="space-y-3">
+              <h4 class="text-white/80 text-sm font-medium">Hiperautomação</h4>
+              <p class="text-white/60 text-sm">
+                Conte-nos sobre seus processos atuais e quais gargalos você 
+                gostaria de eliminar através da automação.
+              </p>
+            </div>
+            
+            <div class="space-y-3">
+              <h4 class="text-white/80 text-sm font-medium">Cloud & DevOps</h4>
+              <p class="text-white/60 text-sm">
+                Explique suas necessidades de infraestrutura e escalabilidade. 
+                Compartilhe desafios específicos do seu ambiente.
+              </p>
+            </div>
+  
+            <div class="pt-4 border-t border-white/[0.05]">
+              <p class="text-white/60 text-sm italic">
+                Nossa equipe analisará sua solicitação e retornará em até 24 horas 
+                com uma proposta inicial ou agendamento para discussão detalhada.
+              </p>
             </div>
           </div>
-          <div class="relative group">
-            <textarea 
-              placeholder="Descreva seu projeto" 
-              rows="4" 
-              class="w-full px-4 py-3 bg-white/[0.02] border border-white/[0.05] focus:border-blue-500/20 outline-none transition-all duration-300 rounded-sm placeholder-white/30 resize-none"></textarea>
-            <div class="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 pointer-events-none"></div>
-          </div>
-          <button type="submit" 
-                  class="w-full px-8 py-3 bg-gradient-to-r hover:border-cyan-400 from-blue-500/10 to-cyan-500/10 hover:from-blue-500/20 hover:to-cyan-500/20 border border-blue-500/20 text-sm tracking-wider transition-all duration-300 rounded-sm relative group overflow-hidden">
-            <span class="relative z-10">Enviar mensagem</span>
-            <div class="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500"></div>
-          </button>
-        </form>
+        </div>
+  
+        <!-- Contact Form Side -->
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-sm blur-xl"></div>
+          <form class="space-y-8 relative bg-white/[0.02] p-8 border border-white/[0.05] backdrop-blur-sm">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="relative group">
+                <label class="text-white/50 text-sm mb-2 block">Seu Nome</label>
+                <input type="text" 
+                       class="w-full px-4 py-3 bg-white/[0.02] border border-white/[0.05] focus:border-blue-500/20 outline-none transition-all duration-300 rounded-sm">
+              </div>
+              <div class="relative group">
+                <label class="text-white/50 text-sm mb-2 block">Seu Email</label>
+                <input type="email" 
+                       class="w-full px-4 py-3 bg-white/[0.02] border border-white/[0.05] focus:border-blue-500/20 outline-none transition-all duration-300 rounded-sm">
+              </div>
+            </div>
+  
+            <div class="space-y-6">
+              <div class="relative group">
+                <label class="text-white/50 text-sm mb-2 block">Área do Projeto</label>
+                <select class="w-full px-4 py-3 bg-white/[0.02] border border-white/[0.05] focus:border-blue-500/20 outline-none transition-all duration-300 rounded-sm text-white/70">
+                  <option value="" disabled selected>Selecione uma área</option>
+                  <option value="desenvolvimento">Desenvolvimento de Software</option>
+                  <option value="automacao">Hiperautomação de Processos</option>
+                  <option value="cloud">Cloud & DevOps</option>
+                </select>
+              </div>
+  
+              <div class="relative group">
+                <label class="text-white/50 text-sm mb-2 block">Descrição do Projeto</label>
+                <textarea 
+                  placeholder="Descreva os objetivos, desafios e resultados esperados do seu projeto..." 
+                  rows="6" 
+                  class="w-full px-4 py-3 bg-white/[0.02] border border-white/[0.05] focus:border-blue-500/20 outline-none transition-all duration-300 rounded-sm placeholder-white/30 resize-none"></textarea>
+              </div>
+            </div>
+  
+            <button type="submit" 
+                    class="w-full px-8 py-3 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 hover:from-blue-500/20 hover:to-cyan-500/20 border border-blue-500/20 text-sm tracking-wider transition-all duration-300 rounded-sm">
+              Iniciar Conversa
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
