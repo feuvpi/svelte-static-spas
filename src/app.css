@@ -1,3 +1,157 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer base {
+  [data-theme="dark"] {
+    /* Base colors */
+    --background-color: #0A0A0B;
+    --text-primary: rgba(255, 255, 255, 0.9);
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --text-tertiary: rgba(255, 255, 255, 0.6);
+    --text-quaternary: rgba(255, 255, 255, 0.4);
+    
+    /* Border colors */
+    --border-primary: rgba(255, 255, 255, 0.05);
+    --border-secondary: rgba(255, 255, 255, 0.1);
+    
+    /* Background overlays */
+    --bg-overlay-primary: rgba(255, 255, 255, 0.02);
+    --bg-overlay-secondary: rgba(255, 255, 255, 0.04);
+    
+    /* Gradient colors */
+    --gradient-blue-start: rgba(59, 130, 246, 0.9);
+    --gradient-blue-end: rgba(34, 211, 238, 0.9);
+    --gradient-blue-start-dim: rgba(59, 130, 246, 0.1);
+    --gradient-blue-end-dim: rgba(34, 211, 238, 0.1);
+    
+    /* Button gradients */
+    --button-gradient: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(34, 211, 238, 0.1));
+    --button-gradient-hover: linear-gradient(to right, rgba(59, 131, 246, 0.578), rgba(34, 211, 238, 0.725));
+    
+    /* Blur effects */
+    --blur-intensity: 16px;
+    --backdrop-blur: 8px;
+  }
+
+  [data-theme="light"] {
+    /* Base colors */
+    --background-color: #F8F9FA;
+    --text-primary: rgba(0, 0, 0, 0.9);
+    --text-secondary: rgba(0, 0, 0, 0.7);
+    --text-tertiary: rgba(0, 0, 0, 0.6);
+    --text-quaternary: rgba(0, 0, 0, 0.4);
+    
+    /* Border colors */
+    --border-primary: rgba(0, 0, 0, 0.05);
+    --border-secondary: rgba(0, 0, 0, 0.1);
+    
+    /* Background overlays */
+    --bg-overlay-primary: rgba(0, 0, 0, 0.02);
+    --bg-overlay-secondary: rgba(0, 0, 0, 0.04);
+    
+    /* Gradient colors */
+    --gradient-blue-start: rgba(59, 130, 246, 0.9);
+    --gradient-blue-end: rgba(34, 211, 238, 0.9);
+    --gradient-blue-start-dim: rgba(59, 130, 246, 0.1);
+    --gradient-blue-end-dim: rgba(34, 211, 238, 0.1);
+    
+    /* Button gradients */
+    --button-gradient: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(34, 211, 238, 0.1));
+    --button-gradient-hover: linear-gradient(to right, rgba(59, 130, 246, 0.2), rgba(34, 211, 238, 0.2));
+    
+    /* Blur effects */
+    --blur-intensity: 16px;
+    --backdrop-blur: 8px;
+  }
+
+  /* Global styles */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Utility classes */
+  .gradient-text {
+    background: linear-gradient(to right, var(--gradient-blue-start), var(--gradient-blue-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gradient-border {
+    border: 1px solid var(--border-primary);
+  }
+
+  .overlay-card {
+    background-color: var(--bg-overlay-primary);
+    border: 1px solid var(--border-primary);
+    backdrop-filter: blur(var(--backdrop-blur));
+  }
+
+  .hover-card {
+    transition: all 0.3s ease;
+  }
+
+  .hover-card:hover {
+    background-color: var(--bg-overlay-secondary);
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+
+  .gradient-button {
+    background: var(--button-gradient);
+    border: 2px solid rgba(62, 119, 210, 0.223);
+    transition: all 0.3s ease;
+  }
+
+  .gradient-button:hover {
+    background: var(--button-gradient-hover);
+    border: var(--button-gradient-hover);
+  }
+
+  /* Form elements */
+  input, textarea, select {
+    background-color: var(--bg-overlay-primary);
+    border: 1px solid var(--border-primary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    border-color: rgba(59, 130, 246, 0.2);
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.1);
+  }
+
+  /* Chrome autofill override */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--text-primary);
+    -webkit-box-shadow: 0 0 0px 1000px var(--background-color) inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-secondary);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
