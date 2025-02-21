@@ -195,3 +195,4 @@ export const getThemeValue = (property: keyof typeof themes.dark) => {
     'dark';
   return themes[currentTheme][property];
 };
+

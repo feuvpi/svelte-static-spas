@@ -32,8 +32,8 @@ import { onMount } from 'svelte';
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
     <div class="flex items-center justify-between h-20">
       <div class="flex items-center">
-        <a href="#" class="text-lg font-light tracking-wider bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
-          Azulbit
+        <a href="#" class="text-lg font-medium font-mono tracking-wider bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+          Jetfox Sofware
         </a>
       </div>
       
@@ -103,8 +103,8 @@ import { onMount } from 'svelte';
   
     <!-- Content -->
     <div class="max-w-3xl text-center relative z-10">
-      <h1 class="text-3xl sm:text-4xl md:text-5xl font-light tracking-wider mb-8 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
-        BitBlue Sistemas
+      <h1 class="text-3xl font-mono sm:text-4xl md:text-5xl font-light tracking-wider mb-8 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+        Jetfox Software
       </h1>
       <p class="text-base sm:text-lg md:text-xl text-white/70 mb-6 font-light tracking-wide">
         Construindo sistemas na era de Inteligência Artificial
@@ -322,166 +322,121 @@ import { onMount } from 'svelte';
 </section> -->
 
 
- <!-- Enhanced Methodology Section -->
- <section class="py-24 px-4 sm:px-6 bg-gradient-to-b from-transparent via-white/[0.01] to-transparent relative" id="metodologia">
-  <!-- Background Decoration -->
-  <div class="absolute inset-0 bg-gradient-to-b from-blue-500/[0.02] via-transparent to-transparent"></div>
-  <div class="absolute right-0 top-1/2 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl transform -translate-y-1/2"></div>
-  
-  <div class="max-w-7xl mx-auto relative">
-    <!-- Header -->
+<section class="py-32 px-4 sm:px-6 bg-gradient-to-b from-transparent via-white/[0.01] to-transparent" id="metodologia">
+  <div class="max-w-6xl mx-auto">
     <div class="text-center mb-20">
-      <h2 class="text-2xl sm:text-3xl font-light tracking-wide mb-6 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
-        Nossa Metodologia
+      <h2 class="text-3xl sm:text-4xl font-light tracking-wide mb-6 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+        Nossa Abordagem
       </h2>
-      <p class="text-white/60 max-w-2xl mx-auto text-lg">
-        Combinamos as melhores práticas de desenvolvimento com processos inovadores para entregar soluções excepcionais
+      <p class="text-white/60 max-w-2xl mx-auto text-lg leading-relaxed">
+        Desenvolvimento ágil e focado em qualidade, combinando as melhores práticas do Flutter com processos otimizados por IA
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-12">
-      <!-- Feature-Driven Development -->
-      <div class="group">
-        <div class="relative">
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-sm blur-xl transition-all duration-500 group-hover:blur-2xl opacity-0 group-hover:opacity-100"></div>
-          <div class="relative p-8 bg-white/[0.02] border border-white/[0.05] rounded-sm backdrop-blur-sm">
-            <div class="flex items-start gap-6 mb-8">
-              <div class="w-12 h-12 flex items-center justify-center rounded-sm bg-blue-500/10">
-                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-xl font-light tracking-wide mb-3 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
-                  Desenvolvimento por Funcionalidade
-                </h3>
+    <div class="grid md:grid-cols-2 gap-16">
+      <!-- Development Process -->
+      <div class="group relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-sm blur-xl transition-all group-hover:blur-2xl opacity-0 group-hover:opacity-100"></div>
+        <div class="p-8 bg-white/[0.02] border border-white/[0.05] rounded-sm">
+          <div class="space-y-8">
+            <div class="group/item">
+              <div class="p-6 bg-white/[0.02] border border-white/[0.05] rounded-sm transition-all duration-300 hover:bg-white/[0.04]">
+                <h4 class="text-lg font-light mb-3 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+                  Design & Prototipagem
+                </h4>
                 <p class="text-white/60 leading-relaxed">
-                  Focamos na entrega de funcionalidades completas e testadas, garantindo valor imediato ao seu projeto. Cada feature é desenvolvida, testada e documentada de forma independente.
+                  Criação de protótipos interativos e definição de arquitetura Flutter seguindo as melhores práticas do Material Design 3 e Human Interface Guidelines.
                 </p>
               </div>
             </div>
 
-            <div class="space-y-4">
-              <div class="group/item">
-                <div class="p-4 bg-white/[0.02] border border-white/[0.05] rounded-sm transition-all duration-300 hover:bg-white/[0.04] hover:border-blue-500/20">
-                  <div class="flex items-center gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-sm bg-blue-500/10 text-blue-400/90 text-sm">01</span>
-                    <div>
-                      <h4 class="text-white/90 font-light mb-1">Análise & Design</h4>
-                      <p class="text-white/50 text-sm">Planejamento detalhado de cada funcionalidade com foco em arquitetura e usabilidade</p>
-                    </div>
-                  </div>
-                </div>
+            <div class="group/item">
+              <div class="p-6 bg-white/[0.02] border border-white/[0.05] rounded-sm transition-all duration-300 hover:bg-white/[0.04]">
+                <h4 class="text-lg font-light mb-3 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+                  Desenvolvimento & Testes
+                </h4>
+                <p class="text-white/60 leading-relaxed">
+                  Implementação com Flutter utilizando arquitetura limpa e testes automatizados. Integração contínua para garantir qualidade do código.
+                </p>
               </div>
+            </div>
 
-              <div class="group/item">
-                <div class="p-4 bg-white/[0.02] border border-white/[0.05] rounded-sm transition-all duration-300 hover:bg-white/[0.04] hover:border-blue-500/20">
-                  <div class="flex items-center gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-sm bg-blue-500/10 text-blue-400/90 text-sm">02</span>
-                    <div>
-                      <h4 class="text-white/90 font-light mb-1">Desenvolvimento Iterativo</h4>
-                      <p class="text-white/50 text-sm">Implementação ágil com ciclos curtos de feedback e validação contínua</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="group/item">
-                <div class="p-4 bg-white/[0.02] border border-white/[0.05] rounded-sm transition-all duration-300 hover:bg-white/[0.04] hover:border-blue-500/20">
-                  <div class="flex items-center gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-sm bg-blue-500/10 text-blue-400/90 text-sm">03</span>
-                    <div>
-                      <h4 class="text-white/90 font-light mb-1">Testes Automatizados</h4>
-                      <p class="text-white/50 text-sm">Cobertura completa de testes garantindo qualidade e confiabilidade</p>
-                    </div>
-                  </div>
-                </div>
+            <div class="group/item">
+              <div class="p-6 bg-white/[0.02] border border-white/[0.05] rounded-sm transition-all duration-300 hover:bg-white/[0.04]">
+                <h4 class="text-lg font-light mb-3 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+                  Deploy & Otimização
+                </h4>
+                <p class="text-white/60 leading-relaxed">
+                  Publicação nas lojas com processo otimizado e monitoramento contínuo de performance e experiência do usuário.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Quality Assurance -->
-      <div class="group">
-        <div class="relative">
-          <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-sm blur-xl transition-all duration-500 group-hover:blur-2xl opacity-0 group-hover:opacity-100"></div>
-          <div class="relative p-8 bg-white/[0.02] border border-white/[0.05] rounded-sm backdrop-blur-sm">
-            <div class="flex items-start gap-6 mb-8">
-              <div class="w-12 h-12 flex items-center justify-center rounded-sm bg-purple-500/10">
-                <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                </svg>
+      <!-- Stats Section -->
+      <div class="space-y-8">
+        <div class="p-8 bg-white/[0.02] border border-white/[0.05] rounded-sm">
+          <div class="grid grid-cols-2 gap-8">
+            <div class="text-center">
+              <div class="text-4xl font-light mb-3 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+                60%
               </div>
-              <div>
-                <h3 class="text-xl font-light tracking-wide mb-3 bg-gradient-to-r from-purple-400/90 to-blue-400/90 text-transparent bg-clip-text">
-                  Garantia de Qualidade
-                </h3>
-                <p class="text-white/60 leading-relaxed">
-                  Nossa abordagem integra qualidade em cada etapa do desenvolvimento, utilizando ferramentas de IA e automação para garantir excelência técnica.
-                </p>
+              <div class="text-white/60 text-sm">
+                Redução no tempo de desenvolvimento
               </div>
             </div>
-
-            <div class="space-y-4">
-              <div class="group/item">
-                <div class="p-4 bg-white/[0.02] border border-white/[0.05] rounded-sm transition-all duration-300 hover:bg-white/[0.04] hover:border-purple-500/20">
-                  <div class="flex items-center gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-sm bg-purple-500/10 text-purple-400/90 text-sm">01</span>
-                    <div>
-                      <h4 class="text-white/90 font-light mb-1">Code Review Inteligente</h4>
-                      <p class="text-white/50 text-sm">Análise automatizada e manual do código com ferramentas de IA</p>
-                    </div>
-                  </div>
-                </div>
+            <div class="text-center">
+              <div class="text-4xl font-light mb-3 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+                99%
               </div>
-
-              <div class="group/item">
-                <div class="p-4 bg-white/[0.02] border border-white/[0.05] rounded-sm transition-all duration-300 hover:bg-white/[0.04] hover:border-purple-500/20">
-                  <div class="flex items-center gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-sm bg-purple-500/10 text-purple-400/90 text-sm">02</span>
-                    <div>
-                      <h4 class="text-white/90 font-light mb-1">Documentação Viva</h4>
-                      <p class="text-white/50 text-sm">Documentação técnica e de negócio atualizada continuamente</p>
-                    </div>
-                  </div>
-                </div>
+              <div class="text-white/60 text-sm">
+                Código compartilhado entre plataformas
               </div>
-
-              <div class="group/item">
-                <div class="p-4 bg-white/[0.02] border border-white/[0.05] rounded-sm transition-all duration-300 hover:bg-white/[0.04] hover:border-purple-500/20">
-                  <div class="flex items-center gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-sm bg-purple-500/10 text-purple-400/90 text-sm">03</span>
-                    <div>
-                      <h4 class="text-white/90 font-light mb-1">Monitoramento Contínuo</h4>
-                      <p class="text-white/50 text-sm">Análise em tempo real de performance e qualidade</p>
-                    </div>
-                  </div>
-                </div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-light mb-3 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+                100%
+              </div>
+              <div class="text-white/60 text-sm">
+                Cobertura de testes
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-light mb-3 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+                4.8+
+              </div>
+              <div class="text-white/60 text-sm">
+                Média de avaliação nas lojas
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Stats Section -->
-    <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
-      <div class="text-center">
-        <div class="text-3xl font-light mb-2 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">98%</div>
-        <div class="text-white/40 text-sm">Satisfação do Cliente</div>
-      </div>
-      <div class="text-center">
-        <div class="text-3xl font-light mb-2 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">100%</div>
-        <div class="text-white/40 text-sm">Cobertura de Testes</div>
-      </div>
-      <div class="text-center">
-        <div class="text-3xl font-light mb-2 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">24/7</div>
-        <div class="text-white/40 text-sm">Monitoramento</div>
-      </div>
-      <div class="text-center">
-        <div class="text-3xl font-light mb-2 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">99.9%</div>
-        <div class="text-white/40 text-sm">Uptime</div>
+        <div class="p-8 bg-white/[0.02] border border-white/[0.05] rounded-sm">
+          <h4 class="text-lg font-light mb-6 bg-gradient-to-r from-blue-400/90 to-cyan-400/90 text-transparent bg-clip-text">
+            Por que Flutter?
+          </h4>
+          <ul class="space-y-4 text-white/60">
+            <li class="flex items-center gap-3">
+              <span class="w-2 h-2 bg-blue-400/90 rounded-full"></span>
+              Interface nativa em uma única base de código
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-2 h-2 bg-blue-400/90 rounded-full"></span>
+              Performance próxima ao desenvolvimento nativo
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-2 h-2 bg-blue-400/90 rounded-full"></span>
+              Hot Reload para desenvolvimento ágil
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-2 h-2 bg-blue-400/90 rounded-full"></span>
+              Suporte oficial do Google
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -830,7 +785,7 @@ import { onMount } from 'svelte';
   <footer class="py-8 px-4 sm:px-6 border-t border-white/[0.05] relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/[0.01] to-transparent pointer-events-none"></div>
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 relative">
-      <p class="text-sm text-white/40 tracking-wider">&copy; 2024 Azulbit</p>
+      <p class="text-sm text-white/40 tracking-wider">&copy; 2024 Jetfox Software</p>
       <div class="flex items-center gap-6">
         <a href="#" class="text-sm text-white/40 hover:text-white/60 transition-colors duration-300">LinkedIn</a>
         <a href="#" class="text-sm text-white/40 hover:text-white/60 transition-colors duration-300">GitHub</a>
